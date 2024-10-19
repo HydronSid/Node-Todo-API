@@ -1,0 +1,8 @@
+# Node modules directory
+/node_modules
+
+# Environment variables
+config.env
+
+# Lock files (optional, but recommended to keep only one package manager lock file)
+package-lock.json
