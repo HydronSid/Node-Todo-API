@@ -3,8 +3,9 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const rateLimit = require("express-rate-limit");
 const todoRouter = require("./route/todoRoutes.js");
+const userRouter = require("./route/userRoutes.js");
 const AppError = require("./utils/appError.js");
-const globalErrorHandler = require("./controller/error_controller.js");
+const globalErrorHandler = require("./controller/errorController.js");
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use("/api", limiter);
 app.use(express.json());
 
 app.use("/api/v1/todo/", todoRouter);
+app.use("/api/v1/users/", userRouter);
 
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server.`, 404));

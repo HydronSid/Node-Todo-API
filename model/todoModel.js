@@ -11,6 +11,10 @@ const todoSchema = new mongoose.Schema({
     minlength: [5, "A todo name must have 5 charas"],
     // validate: [validator.isAlpha, 'Tour name must only contains character'],
   },
+  // user_id: {
+  //   type: Number,
+  //   require: true,
+  // },
   slug: String,
   description: {
     type: String,
