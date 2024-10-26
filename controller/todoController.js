@@ -99,3 +99,9 @@ exports.deleteTodo = catchAsync(async (req, res) => {
     status: "Deleted Successfully",
   });
 });
+
+exports.uploadTodoAttachment = catchAsync(async (req, res, next) => {
+  res.status(200).json({
+    status: "upload successfully",
+  });
+});

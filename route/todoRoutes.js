@@ -1,6 +1,7 @@
 const express = require("express");
 const todoController = require("../controller/todoController.js");
 const authController = require("../controller/authController.js");
+const uploadMiddleware = require("../middlewares/uploadMiddleware.js");
 
 const router = express.Router();
 
@@ -16,5 +17,11 @@ router
   .delete(todoController.deleteTodo);
 
 router.post("/getTodoList", todoController.getAllTodosByUserId);
+
+router.post(
+  "/upload",
+  uploadMiddleware.single("file"),
+  todoController.uploadTodoAttachment
+);
 
 module.exports = router;

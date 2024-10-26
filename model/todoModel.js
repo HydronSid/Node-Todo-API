@@ -24,6 +24,9 @@ const todoSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  attachment: {
+    type: String,
+  },
   created_by: {
     type: String,
     require: true,
